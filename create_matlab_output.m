@@ -2,8 +2,9 @@ clear;
 clc;
 
 fNmae2save= 'matlab_normxcorr2_output.mat';
+force_redo= 1;
 
-if ~exist(fNmae2save, 'file')
+if ~exist(fNmae2save, 'file') | force_redo
 
     image_dir= ['images' filesep];
     template_dir= ['templates' filesep];
@@ -21,7 +22,7 @@ if ~exist(fNmae2save, 'file')
         cur_image_struct_data= cur_image_struct_data.cochleogram;
 
 
-        parfor tempVar=1:length(all_templates)
+        for tempVar=1:length(all_templates)
             cur_temp_fStruct= all_templates(tempVar);
             cur_temp_fName= [cur_temp_fStruct.folder filesep cur_temp_fStruct.name];
             cur_temp_struct_data= load(cur_temp_fName);
@@ -43,5 +44,5 @@ if ~exist(fNmae2save, 'file')
         end
     end
 
-    save(fNmae2save, 'corr_energy')
+%     save(fNmae2save, 'corr_energy')
 end
