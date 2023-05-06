@@ -1,3 +1,5 @@
+This is a faulty implementation - as noted in the issues section of the original repo. Use the following repo instead. https://github.com/sbp894/normxcorr2sp
+
 # Normalized cross-correlation
 ## normxcorr2-python
 This is a Python 3.5 implementation of Matlab's normxcorr2 using scipy's fftconvolve and numpy.
